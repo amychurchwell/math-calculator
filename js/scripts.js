@@ -1,18 +1,14 @@
-var addition = function(number1, number2) {
-  return number1 + number2;
-};
-var subtract = function(number1, number2) {
-  return number1 - number2;
-};
-var multi = function(number1, number2) {
-  return number1 * number2;
-};
-var divide = function(number1, number2) {
-  return number1 / number2;
-};
 
-var doMath = $('#mathInput').val();
+$('document').ready(function(){
+  var answer;
+  console.log(answer);
 
-$('#doAdd').submit(function(){
-  addition(num1, num2);
+  $('#doAdd').submit(function(event){
+    var num1 = parseInt($('#number1').val());
+    var num2 = parseInt($('#number2').val());
+    answer = num1 + num2;
+    console.log(answer);
+    event.preventDefault();
+    //addition(num1, num2);
+  });
 });
