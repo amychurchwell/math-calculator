@@ -1,39 +1,28 @@
+var add  = function(number1, number2) {
+  return number1 + number2
+};
+
+var subtract  = function(number1, number2) {
+  return number1 - number2
+};
+
+var multiply  = function(number1, number2) {
+  return number1 * number2
+};
+
+var divide  = function(number1, number2) {
+  return number1 / number2
+};
+
+
 
 $('document').ready(function(){
-  console.log('page loaded');
-  $('#doAdd').submit(function(event){
-    var num1 = parseInt($('#number1').val());
-    var num2 = parseInt($('#number2').val());
-    var answer = num1 + num2;
-    $('#result').text(answer);
-    event.preventDefault();
-    //addition(num1, num2);
-  });
-  $('#doSub').submit(function(event){
-    console.log('TESTIN');
-    var num1 = parseInt($('#number1S').val());
-    var num2 = parseInt($('#number2S').val());
-    var answer = num1 - num2;
-    $('#result').text(answer);
-    event.preventDefault();
-    //addition(num1, num2);
-  });
-  $('#doMulti').submit(function(event){
-    console.log('TESTIN');
-    var num1 = parseInt($('#number1M').val());
-    var num2 = parseInt($('#number2M').val());
-    var answer = num1 * num2;
-    $('#result').text(answer);
-    event.preventDefault();
-    //addition(num1, num2);
-  });
-  $('#doDivide').submit(function(event){
-    console.log('TESTIN');
-    var num1 = parseInt($('#number1D').val());
-    var num2 = parseInt($('#number2D').val());
-    var answer = num1 / num2;
-    $('#result').text(answer);
-    event.preventDefault();
-    //addition(num1, num2);
-  });
+$("form#calculator").submit(function(event){
+  event.preventDefault();
+  var number1 = parseInt($("#number1").val());
+  var number2 = parseInt($("#number2").val());
+  var operator = $("input:radio[name=operator]:checked").val();
+  var result = add(number1, number2);
+  $("#result").text(result);
+});
 });
